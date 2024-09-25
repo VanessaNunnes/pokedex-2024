@@ -117,6 +117,13 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "angular-cli-ghpages:deploy",
+          "options": {
+            "baseHref": "",
+            "repo": "https://github.com/VanessaNunnes/pokedex-2024.git"
+          }
         }
       }
     }
