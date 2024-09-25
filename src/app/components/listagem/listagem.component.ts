@@ -64,7 +64,7 @@ export class ListagemComponent implements OnInit {
     return {
       id: obj.id,
       nome: converterParaTitleCase(obj.name),
-      urlSprite: obj.sprites.front_default,
+      urlSprite: obj.sprites.other.dream_world.front_default,
       tipos: obj.types.map(mapearTipoPokemon),
     };
   }
