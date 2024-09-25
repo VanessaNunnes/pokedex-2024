@@ -121,7 +121,7 @@
         "deploy": {
           "builder": "angular-cli-ghpages:deploy",
           "options": {
-            "baseHref": "",
+            "baseHref": "https://vanessanunnes.github.io/pokedex-2024/",
             "repo": "https://github.com/VanessaNunnes/pokedex-2024.git"
           }
         }
