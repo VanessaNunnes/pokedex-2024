@@ -1,6 +1,6 @@
 <main aria-label="Listagem de Pokémons" class="container my-4">
 
-  <app-busca (pesquisaFeita)="filtrarPokemons($event)"></app-busca>
+  <app-busca (pesquisaFeita)="filtrarPokemons($event)" (limpezaFiltro)="limparFiltro()"></app-busca>
 
 
   <div class="row justify-content-center g-3">
