@@ -28,6 +28,7 @@ export class BuscaComponent {
   }
 
   public onLimpar(): void{
+    this.buscaRealizada = false;
     this.limpezaFiltro.emit();
   }
 }
