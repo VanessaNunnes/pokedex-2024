@@ -38,12 +38,26 @@ export class ListagemComponent implements OnInit {
     Steel: 'fundo-tipo-aco',
   };
 
+  private offsetPaginacao: number;
+
   constructor(private pokeApiService: PokeApiService) {
     this.pokemons = [];
+    this.offsetPaginacao = 0;
   }
 
-  ngOnInit(): void {
-    this.pokeApiService.selecionarTodos().subscribe((res) => {
+  public ngOnInit(): void {
+    this.obterPokemons();
+  }
+
+  public buscarMaisResultados(): void{
+
+    this.offsetPaginacao += 20;
+
+    this.obterPokemons();
+  }
+
+  private obterPokemons() {
+    this.pokeApiService.selecionarTodos(this.offsetPaginacao).subscribe((res) => {
       const arrayResultados = res.results as any[];
 
       for (let resultado of arrayResultados) {
@@ -56,9 +70,11 @@ export class ListagemComponent implements OnInit {
           });
       }
 
-      this.pokemons.sort((p) => p.id)
+      this.pokemons.sort((p) => p.id);
     });
   }
+
+
 
   private mapearPokemon(obj: any): Pokemon {
     return {
